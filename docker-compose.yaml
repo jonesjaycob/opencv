@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  anaconda-jupyter:
+    build: .
+    container_name: anaconda_jupyter
+    ports:
+      - "8888:8888" # Expose Jupyter Notebook on localhost:8888
+    volumes:
+      - ./notebooks:/workspace/notebooks # Persist notebooks locally
+      - ./data:/workspace/data # Optional: Share additional data
